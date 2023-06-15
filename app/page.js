@@ -1,113 +1,120 @@
-import Image from 'next/image'
+import React from 'react'
 
+
+var input = require('./input.json')[0]
 export default function Home() {
+  // console.log(typeof(input))
+  // console.log(input)
+  var out = parseJson(input, 0)
+  console.log(typeof(out))
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div>
+            {out}
+          </div>
+      )
 }
+
+function parseMention(mention) {
+  return mention.children[0].text
+}
+
+function parseList(list) {
+  var output = []
+  let i = 0
+  for (var child of list.children) {
+    // console.log(child)
+    for (var li of child.children) {
+      var curr = []
+      for (var lic of li.children) {
+        if (lic.type == 'mention') {
+          curr.push(parseMention(lic))
+        } else {
+          curr.push(lic.text)
+        }
+      }
+      console.log(curr)
+    }
+
+    output.push(React.createElement("li", {key:i++}, curr))
+  }
+
+  return React.createElement("ul", null, output)
+
+}
+
+var textTags = new Set(["h1", "h2", "h3", "h4", "h5", "h6", "p"]);
+function parseClause(clause, clauseCount) {
+  var output = []
+  // console.log(clause)
+  var titleObj = clause.children[0]
+  var titleProps = titleObj.children[0]
+
+  if ("bold" in titleProps && titleProps.bold) {
+    output.push(React.createElement(titleObj.type, null,
+                React.createElement('strong', null, clauseCount + ". " + titleProps.text)
+          ))
+  } else {
+    output.push(React.createElement(titleObj.type, null, titleProps.text))
+  }
+  for (var child of clause.children.splice(1)) {
+    // console.log(child)
+    if (child.type == "ul") {
+      // console.log(child)
+      output.push(parseList(child))
+    } else if (textTags.has(child.type)) {
+      output.push(parseText(child))
+    }
+  }
+
+  return React.createElement('div', null, output)
+
+}
+
+function parseText(txt, typeTag) {
+  if (!("children" in txt)) {
+    if ("bold" in txt && txt.bold) {
+      return React.createElement(typeTag, null, React.createElement("strong", {}, txt.text))
+    }
+    return React.createElement(typeTag, null, txt.text)
+    
+  }
+  var output = []
+  for (var child of txt.children) {
+    if ("type" in child && child.type == "mention") {
+      output.push(parseMention(child))
+    } else {
+      if ("text" in child && child.text.includes("\n")) {
+        let toks = child.text.split("\n")
+        output.push(toks[0])
+        output.push(React.createElement('br', null, null))
+        // output.push(toks[1])
+      }
+      if ("bold" in child && child.bold) {
+        output.push(React.createElement("b", null, child.text))
+      } else {
+        output.push(child.text)
+      }
+    }
+  }
+  return React.createElement("div", null, output)
+}
+
+function parseJson(inpt, clauseCount) {
+  var output = []
+  if ("children" in inpt) {
+    for (var child of inpt["children"]) {
+      // console.log(child.type)
+      if (textTags.has(child.type)) {
+        output.push(parseText(child, child.type))
+      } else if (child.type == 'mention') {
+        output.push(parseMention(child))
+      } else if (child.type == 'clause') {
+        output.push(parseClause(child, ++clauseCount))
+      } else {
+        output.push(parseJson(child))
+      }
+    }
+  }
+  return output
+}
+
